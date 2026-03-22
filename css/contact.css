@@ -1,0 +1,152 @@
+/* ════════════════════════════════════
+   CONTACT SECTION STYLES
+   ════════════════════════════════════ */
+
+#contact {
+  background: var(--dark);
+  padding: 90px 48px;
+}
+
+#contact .sec-eyebrow {
+  color: #555;
+}
+
+#contact .sec-title {
+  color: var(--white);
+}
+
+#contact .sec-title .outline {
+  -webkit-text-stroke: 3px var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.big-cta {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+
+.big-cta span {
+  color: var(--lime);
+}
+
+.contact-left p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8;
+  margin-top: 16px;
+  max-width: 380px;
+}
+
+.contact-links {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.c-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  padding: 14px 18px;
+  background: #1a1a1a;
+  border: 2px solid #222;
+  border-radius: 14px;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: none;
+}
+
+.c-link:hover {
+  border-color: var(--lime);
+  transform: translateX(6px);
+}
+
+.c-link-icon {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--lime);
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.c-link-val {
+  font-size: 13px;
+  color: #aaa;
+  word-break: break-all;
+}
+
+.contact-right {
+  background: #1a1a1a;
+  padding: 32px 28px;
+  border: 2.5px solid #222;
+  border-radius: 18px;
+  border-top: 4px solid var(--lime);
+}
+
+.contact-right h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--white);
+  margin-bottom: 22px;
+}
+
+.fg {
+  margin-bottom: 14px;
+}
+
+.fg input,
+.fg textarea {
+  width: 100%;
+  background: #111;
+  border: 2px solid #2a2a2a;
+  border-radius: 10px;
+  color: var(--white);
+  padding: 13px 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.fg input:focus,
+.fg textarea:focus {
+  border-color: var(--lime);
+}
+
+.fg input::placeholder,
+.fg textarea::placeholder {
+  color: #444;
+}
+
+.f-submit {
+  width: 100%;
+  background: var(--lime);
+  color: var(--dark);
+  border: 2px solid var(--lime);
+  border-radius: 10px;
+  padding: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.f-submit:hover {
+  background: var(--white);
+}
