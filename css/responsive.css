@@ -1,0 +1,47 @@
+/* ════════════════════════════════════
+   RESPONSIVE DESIGN
+   ════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .hero-blocks,
+  .about-grid,
+  .resume-layout,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    padding: 14px 20px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  #home,
+  #about,
+  #skills,
+  #resume,
+  #contact,
+  footer {
+    padding: 60px 20px;
+  }
+
+  .sec-title {
+    font-size: 48px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .hero-big-name {
+    font-size: 52px;
+  }
+}

@@ -1,0 +1,46 @@
+/* ════════════════════════════════════
+   ANIMATIONS & KEYFRAMES
+   ════════════════════════════════════ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinSpark {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.hidden {
+  opacity: 0;
+  transform: translateY(36px);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sparkle-anim {
+  animation: spinSpark 4s linear infinite;
+}
