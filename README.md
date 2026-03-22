@@ -128,4 +128,4 @@ Replace `Resume.pdf` with your own resume file
 ---
 
 **Created by:** Abiturab Vora
-**Last Updated:** 2025
+**Last Updated:** 2026
