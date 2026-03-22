@@ -7,12 +7,12 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 48px;
-  background: rgba(240, 237, 228, 0.94);
+  background: rgba(240, 237, 228, 0.97);
   border-bottom: 2.5px solid var(--dark);
   backdrop-filter: blur(8px);
 }
@@ -25,6 +25,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .nav-dot {
@@ -38,15 +39,11 @@ nav {
 }
 
 @keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.4); }
 }
 
+/* ── NAV LINKS (desktop default) ── */
 .nav-links {
   display: flex;
   gap: 28px;
@@ -75,133 +72,106 @@ nav {
   transition: width 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--dark);
-}
+.nav-links a:hover        { color: var(--dark); }
+.nav-links a:hover::after { width: 100%; }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* ── HAMBURGER BUTTON ── */
+/* ── HAMBURGER BUTTON (hidden on desktop) ── */
 .nav-hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px;
-  height: 20px;
+  width: 30px;
+  height: 22px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1100;
+  flex-shrink: 0;
+  z-index: 2100;
 }
 
 .nav-hamburger span {
   display: block;
   width: 100%;
-  height: 2.5px;
+  height: 3px;
   background: var(--dark);
-  border-radius: 2px;
-  transition: transform 0.3s, opacity 0.3s;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
 }
 
-/* Hamburger → X animation */
-.nav-hamburger.open span:nth-child(1) {
-  transform: translateY(8.75px) rotate(45deg);
-}
-.nav-hamburger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.nav-hamburger.open span:nth-child(3) {
-  transform: translateY(-8.75px) rotate(-45deg);
-}
+/* Hamburger → X when open */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
-/* Mobile nav overlay */
+/* ════════════════════════════════════
+   MOBILE — <= 768px
+   ════════════════════════════════════ */
 @media (max-width: 768px) {
+
   nav {
     padding: 14px 20px;
-<<<<<<< HEAD
-    z-index: 2000;
-=======
->>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
   }
 
+  /* Show hamburger */
   .nav-hamburger {
     display: flex;
-<<<<<<< HEAD
-    z-index: 2100;
-    position: relative;
   }
 
-  /* Dark backdrop behind slide-in menu */
-=======
-  }
-
->>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
+  /* Nav links: slide panel, hidden off-screen by default */
   .nav-links {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-<<<<<<< HEAD
-    width: min(280px, 80vw);
+    width: min(280px, 78vw);
     background: var(--cream);
-=======
-    width: 260px;
-    background: rgba(240, 237, 228, 0.98);
->>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
     border-left: 2.5px solid var(--dark);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 32px;
-    padding: 48px 36px;
-    transform: translateX(100%);
+    gap: 36px;
+    padding: 60px 36px;
+    transform: translateX(110%);
     transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
-<<<<<<< HEAD
     z-index: 2050;
-    /* Solid — no transparency so content behind doesn't bleed through */
-    opacity: 1;
-=======
-    backdrop-filter: blur(12px);
->>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
+    overflow: hidden;
   }
 
+  /* Slide in when open */
   .nav-links.open {
     transform: translateX(0);
-<<<<<<< HEAD
-    box-shadow: -8px 0 40px rgba(0,0,0,0.18);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
   }
 
-  .nav-links a {
-    font-size: 15px;
-    letter-spacing: 3px;
-    color: var(--dark);
-  }
-
-  .nav-links a:hover {
-    color: var(--orange);
-  }
-
-  /* Backdrop overlay when menu is open */
-  .nav-backdrop {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 2000;
-  }
-
-  .nav-backdrop.open {
-    display: block;
-=======
+  .nav-links li {
+    width: 100%;
   }
 
   .nav-links a {
     font-size: 14px;
     letter-spacing: 3px;
->>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
+    color: var(--dark);
+    display: block;
+    padding: 4px 0;
   }
+
+  .nav-links a::after {
+    background: var(--orange);
+  }
+}
+
+/* ── BACKDROP (injected by JS) ── */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2010;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-backdrop.open {
+  display: block;
 }
