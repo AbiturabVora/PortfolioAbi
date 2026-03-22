@@ -15,6 +15,7 @@ nav {
   background: rgba(240, 237, 228, 0.97);
   border-bottom: 2.5px solid var(--dark);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .nav-logo {
@@ -26,6 +27,7 @@ nav {
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .nav-dot {
@@ -43,11 +45,13 @@ nav {
   50%       { transform: scale(1.4); }
 }
 
-/* ── NAV LINKS (desktop default) ── */
+/* ── NAV LINKS — Desktop ── */
 .nav-links {
   display: flex;
   gap: 28px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -59,6 +63,7 @@ nav {
   text-transform: uppercase;
   transition: color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -75,19 +80,20 @@ nav {
 .nav-links a:hover        { color: var(--dark); }
 .nav-links a:hover::after { width: 100%; }
 
-/* ── HAMBURGER BUTTON (hidden on desktop) ── */
+/* ── HAMBURGER — hidden on desktop ── */
 .nav-hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
+  width: 32px;
   height: 22px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
-  z-index: 2100;
+  z-index: 2200;
+  position: relative;
 }
 
 .nav-hamburger span {
@@ -98,80 +104,99 @@ nav {
   border-radius: 3px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform-origin: center;
+  pointer-events: none;
 }
 
-/* Hamburger → X when open */
+/* Hamburger animates to X when .open */
 .nav-hamburger.open span:nth-child(1) { transform: translateY(9.5px) rotate(45deg); }
 .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-9.5px) rotate(-45deg); }
 
-/* ════════════════════════════════════
-   MOBILE — <= 768px
-   ════════════════════════════════════ */
+/* ══════════════════════════════════════
+   MOBILE  ≤ 768px
+   ══════════════════════════════════════ */
 @media (max-width: 768px) {
 
   nav {
     padding: 14px 20px;
   }
 
-  /* Show hamburger */
+  /* Show the hamburger button */
   .nav-hamburger {
     display: flex;
   }
 
-  /* Nav links: slide panel, hidden off-screen by default */
+  /* ─ HIDE nav links completely off-screen ─
+     Using both display trick + transform so it is
+     truly invisible and doesn't affect layout */
   .nav-links {
+    /* Panel geometry */
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
-    width: min(280px, 78vw);
-    background: var(--cream);
-    border-left: 2.5px solid var(--dark);
+    width: 75vw;
+    max-width: 300px;
+    height: 100%;
+    /* Stack vertically */
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 36px;
-    padding: 60px 36px;
-    transform: translateX(110%);
-    transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 2050;
-    overflow: hidden;
+    gap: 32px;
+    padding: 80px 36px 40px;
+    margin: 0;
+    /* Styling */
+    background: #f0ede4;
+    border-left: 2.5px solid #111;
+    list-style: none;
+    /* Hidden: pushed far right, invisible */
+    transform: translateX(105%);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.77,0,0.175,1),
+                visibility 0s linear 0.35s;
+    z-index: 2100;
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
-  /* Slide in when open */
+  /* Visible: slid into view */
   .nav-links.open {
     transform: translateX(0);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+    visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.77,0,0.175,1),
+                visibility 0s linear 0s;
+    box-shadow: -8px 0 32px rgba(0,0,0,0.22);
   }
 
   .nav-links li {
     width: 100%;
+    list-style: none;
   }
 
   .nav-links a {
     font-size: 14px;
+    font-weight: 900;
     letter-spacing: 3px;
-    color: var(--dark);
+    color: #111;
     display: block;
-    padding: 4px 0;
+    padding: 6px 0;
+    text-transform: uppercase;
   }
 
   .nav-links a::after {
-    background: var(--orange);
+    background: #FB923C;
   }
 }
 
-/* ── BACKDROP (injected by JS) ── */
+/* ── BACKDROP ── */
 .nav-backdrop {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 2010;
+  background: rgba(0,0,0,0.5);
+  z-index: 2050;
   -webkit-tap-highlight-color: transparent;
 }
-
 .nav-backdrop.open {
   display: block;
 }

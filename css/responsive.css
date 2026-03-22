@@ -1,242 +1,42 @@
-/* ════════════════════════════════════
-   RESPONSIVE DESIGN
-   ════════════════════════════════════ */
+/* =========================================
+   MOBILE RESPONSIVE STYLES
+   ========================================= */
 
-/* TABLET & BELOW */
-@media (max-width: 900px) {
-  .hero-blocks,
-  .about-grid,
-  .resume-layout,
-  .contact-grid {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 768px) {
+  
+  /* Navigation appearance handled in css/navigation.css; no overrides here */
+
+  /* --- 3. GENERAL MOBILE LAYOUT FIXES --- */
+  
+  /* Stack hero section blocks */
+  .hero-blocks {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
-  #home,
-  #about,
-  #skills,
-  #resume,
-  #contact,
-  footer {
-    padding: 60px 20px;
+  /* Shrink massive text for mobile screens */
+  .hero-big-name {
+    font-size: 3rem;
   }
 
   .sec-title {
-    font-size: 48px;
+    font-size: 2.5rem;
   }
 
+  /* Convert grids to single-column layouts for mobile */
+  .about-grid, 
+  .contact-grid, 
+  .resume-layout,
   .skills-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-
-  footer {
+    display: flex;
     flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-
-  .hero-big-name {
-    font-size: 52px;
-  }
-}
-
-/* MOBILE PHONES */
-@media (max-width: 640px) {
-  .hero-blocks {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .hb {
-    min-height: 200px;
-  }
-
-  .hero-big-name {
-    font-size: 42px;
-    letter-spacing: 3px;
+    gap: 30px;
   }
 
   .hero-sub-row {
-    gap: 8px;
-    padding: 8px 12px 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero-sub-tag,
-  .hero-sub-text {
-    font-size: 11px;
-  }
-
-  .hb-name {
-    font-size: 24px;
-  }
-
-  .sec-title {
-    font-size: 36px;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .skill-card {
-    padding: 20px 16px;
-    /* Allow default cursor on touch */
-    cursor: auto;
-  }
-
-  .sk-name {
-    font-size: 14px;
-  }
-
-  .sk-desc {
-    font-size: 12px;
-  }
-
-  .resume-layout {
-    gap: 24px;
-  }
-
-  .contact-grid {
-    gap: 24px;
-  }
-
-  .big-cta {
-    font-size: 36px;
-  }
-
-  #home,
-  #about,
-  #skills,
-  #resume,
-  #contact,
-  footer {
-    padding: 48px 16px;
-  }
-
-  nav {
-    padding: 12px 16px;
-  }
-
-  .ticker {
-    padding: 8px 0;
-  }
-
-  .t-item {
-    font-size: 13px;
-    padding: 0 16px;
-  }
-
-  footer {
-    padding: 24px 16px;
-    gap: 12px;
-  }
-
-  /* Resume buttons stack on mobile */
-  .resume-right > div[style*="display:flex"] {
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-}
-
-/* SMALL PHONES */
-@media (max-width: 480px) {
-  .hero-big-name {
-    font-size: 36px;
-  }
-
-  .sec-title {
-    font-size: 28px;
-  }
-
-  .skill-card {
-    padding: 16px 12px;
-  }
-
-  .sk-icon {
-    font-size: 11px;
-    padding: 3px 8px;
-  }
-
-  .sk-name {
-    font-size: 13px;
-    margin-bottom: 6px;
-  }
-
-  .sk-desc {
-    font-size: 11px;
-  }
-
-  .hb-tag {
-    font-size: 8px;
-  }
-
-  .hb-name {
-    font-size: 20px;
-  }
-
-  .tech-tags {
-    gap: 6px;
-  }
-
-  .tech-tag {
-    padding: 5px 10px;
-    font-size: 10px;
-  }
-
-  .exp-role {
-    font-size: 24px;
-  }
-
-  .dl-btn {
-    padding: 12px 20px;
-    font-size: 11px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .c-link-val {
-    font-size: 11px;
-    word-break: break-all;
-  }
-}
-
-/* TOUCH DEVICES — restore default cursor everywhere */
-@media (pointer: coarse) {
-  body,
-  .skill-card,
-  a,
-  button,
-  input,
-  textarea {
-    cursor: auto;
-  }
-
-  #cur,
-  #cur-ring {
-    display: none !important;
-  }
-<<<<<<< HEAD
-
-  /* Tighten about text on touch devices */
-  .about-text p {
-    line-height: 1.6;
-    font-size: 14px;
-  }
-
-  /* Outline text fix on Android — stronger stroke, explicit transparent */
-  .sec-title .outline {
-    -webkit-text-stroke: 2.5px currentColor;
-    color: transparent !important;
-  }
-
-  /* On dark backgrounds (skills, contact) the outline needs white stroke */
-  #skills .sec-title .outline,
-  #contact .sec-title .outline {
-    -webkit-text-stroke: 2.5px #ffffff;
-    color: transparent !important;
-  }
-=======
->>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
 }
