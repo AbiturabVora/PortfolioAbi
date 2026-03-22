@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ════════════════════════════════════
    SKILLS SECTION STYLES
    ════════════════════════════════════ */
@@ -186,3 +187,193 @@
 .skill-card:nth-child(6) .sk-bar {
   background: var(--sky);
 }
+=======
+/* ════════════════════════════════════
+   SKILLS SECTION STYLES
+   ════════════════════════════════════ */
+
+#skills {
+  background: var(--dark);
+  padding: 90px 48px;
+}
+
+#skills .sec-eyebrow {
+  color: #555;
+}
+
+#skills .sec-title {
+  color: var(--white);
+}
+
+#skills .sec-title .outline {
+  -webkit-text-stroke: 3px var(--white);
+  color: transparent;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 48px;
+}
+
+.skill-card {
+  padding: 28px 24px;
+  border: 2.5px solid #222;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+  transition: transform 0.2s, border-color 0.2s;
+  background: #1a1a1a;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card:nth-child(1):hover {
+  border-color: var(--lime);
+}
+
+.skill-card:nth-child(2):hover {
+  border-color: var(--purple);
+}
+
+.skill-card:nth-child(3):hover {
+  border-color: var(--orange);
+}
+
+.skill-card:nth-child(4):hover {
+  border-color: var(--pink);
+}
+
+.skill-card:nth-child(5):hover {
+  border-color: var(--lime);
+}
+
+.skill-card:nth-child(6):hover {
+  border-color: var(--sky);
+}
+
+.skill-card:nth-child(7):hover {
+  border-color: var(--orange);
+}
+
+.skill-card:nth-child(8):hover {
+  border-color: var(--purple);
+}
+
+.skill-card:nth-child(9):hover {
+  border-color: var(--pink);
+}
+
+.sk-icon {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.skill-card:nth-child(1) .sk-icon {
+  background: var(--lime);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(2) .sk-icon {
+  background: var(--purple);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(3) .sk-icon {
+  background: var(--orange);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(4) .sk-icon {
+  background: var(--pink);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(5) .sk-icon {
+  background: var(--lime);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(6) .sk-icon {
+  background: var(--sky);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(7) .sk-icon {
+  background: var(--orange);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(8) .sk-icon {
+  background: var(--purple);
+  color: var(--dark);
+}
+
+.skill-card:nth-child(9) .sk-icon {
+  background: var(--pink);
+  color: var(--dark);
+}
+
+.sk-name {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.sk-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.sk-bar-wrap {
+  margin-top: 14px;
+  background: #2a2a2a;
+  height: 4px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sk-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0;
+}
+
+.skill-card:nth-child(1) .sk-bar,
+.skill-card:nth-child(5) .sk-bar {
+  background: var(--lime);
+}
+
+.skill-card:nth-child(2) .sk-bar,
+.skill-card:nth-child(8) .sk-bar {
+  background: var(--purple);
+}
+
+.skill-card:nth-child(3) .sk-bar,
+.skill-card:nth-child(7) .sk-bar {
+  background: var(--orange);
+}
+
+.skill-card:nth-child(4) .sk-bar,
+.skill-card:nth-child(9) .sk-bar {
+  background: var(--pink);
+}
+
+.skill-card:nth-child(6) .sk-bar {
+  background: var(--sky);
+}
+>>>>>>> 1432797 (Initial commit)
