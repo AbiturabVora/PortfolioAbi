@@ -217,4 +217,23 @@
   #cur-ring {
     display: none !important;
   }
+
+  /* Tighten about text on touch devices */
+  .about-text p {
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* Outline text fix on Android — stronger stroke, explicit transparent */
+  .sec-title .outline {
+    -webkit-text-stroke: 2.5px currentColor;
+    color: transparent !important;
+  }
+
+  /* On dark backgrounds (skills, contact) the outline needs white stroke */
+  #skills .sec-title .outline,
+  #contact .sec-title .outline {
+    -webkit-text-stroke: 2.5px #ffffff;
+    color: transparent !important;
+  }
 }

@@ -12,9 +12,10 @@ window.addEventListener('scroll', () => {
     if (box.top <= 200) current = s.getAttribute('id');
   });
   navA.forEach((a) => {
-    a.style.color = '#666';
+    a.style.color = '';
     if (a.getAttribute('href') === '#' + current) {
       a.style.color = 'var(--dark)';
+      a.style.fontWeight = '900';
     }
   });
 });
@@ -23,25 +24,37 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('navHamburger');
 const navLinks = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', function () {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-  // Prevent body scroll when menu is open
-  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
-});
+// Create backdrop element dynamically
+const backdrop = document.createElement('div');
+backdrop.className = 'nav-backdrop';
+document.body.appendChild(backdrop);
 
-// Close menu when clicking outside
-document.addEventListener('click', function (e) {
-  if (navLinks.classList.contains('open') &&
-      !navLinks.contains(e.target) &&
-      !hamburger.contains(e.target)) {
-    closeNav();
-  }
-});
+function openNav() {
+  hamburger.classList.add('open');
+  navLinks.classList.add('open');
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
 
-// Called from anchor onclick in HTML
 function closeNav() {
   hamburger.classList.remove('open');
   navLinks.classList.remove('open');
+  backdrop.classList.remove('open');
   document.body.style.overflow = '';
 }
+
+hamburger.addEventListener('click', function () {
+  if (navLinks.classList.contains('open')) {
+    closeNav();
+  } else {
+    openNav();
+  }
+});
+
+// Close when tapping the backdrop
+backdrop.addEventListener('click', closeNav);
+
+// Close on escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeNav();
+});
