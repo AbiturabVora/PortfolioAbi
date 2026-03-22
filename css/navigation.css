@@ -122,23 +122,36 @@ nav {
 @media (max-width: 768px) {
   nav {
     padding: 14px 20px;
+<<<<<<< HEAD
     z-index: 2000;
+=======
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
   }
 
   .nav-hamburger {
     display: flex;
+<<<<<<< HEAD
     z-index: 2100;
     position: relative;
   }
 
   /* Dark backdrop behind slide-in menu */
+=======
+  }
+
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
   .nav-links {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
+<<<<<<< HEAD
     width: min(280px, 80vw);
     background: var(--cream);
+=======
+    width: 260px;
+    background: rgba(240, 237, 228, 0.98);
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
     border-left: 2.5px solid var(--dark);
     flex-direction: column;
     justify-content: center;
@@ -147,13 +160,18 @@ nav {
     padding: 48px 36px;
     transform: translateX(100%);
     transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+<<<<<<< HEAD
     z-index: 2050;
     /* Solid — no transparency so content behind doesn't bleed through */
     opacity: 1;
+=======
+    backdrop-filter: blur(12px);
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
   }
 
   .nav-links.open {
     transform: translateX(0);
+<<<<<<< HEAD
     box-shadow: -8px 0 40px rgba(0,0,0,0.18);
   }
 
@@ -178,5 +196,12 @@ nav {
 
   .nav-backdrop.open {
     display: block;
+=======
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    letter-spacing: 3px;
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
   }
 }

@@ -38,6 +38,7 @@
 }
 
 .sec-title .outline {
+<<<<<<< HEAD
   /* Cross-browser outline text — works on Android Chrome */
   -webkit-text-stroke: 3px var(--dark);
   color: transparent;
@@ -55,6 +56,10 @@
       -2px  2px 0 var(--cream),
        2px  2px 0 var(--cream);
   }
+=======
+  -webkit-text-stroke: 3px var(--dark);
+  color: transparent;
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
 }
 
 .sec-title .filled-accent {
@@ -71,9 +76,15 @@
 
 .about-text p {
   font-size: 15px;
+<<<<<<< HEAD
   line-height: 1.65;
   color: #555;
   margin-bottom: 16px;
+=======
+  line-height: 1.9;
+  color: #555;
+  margin-bottom: 18px;
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
 }
 
 .about-text p strong {

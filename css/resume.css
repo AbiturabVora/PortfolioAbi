@@ -115,7 +115,11 @@
   color: var(--dark);
   background: transparent;
   transition: all 0.2s;
+<<<<<<< HEAD
   
+=======
+  cursor: none;
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
 }
 
 .tech-tag:hover {
@@ -144,7 +148,11 @@
   text-decoration: none;
   border-radius: 30px;
   border: 2px solid var(--dark);
+<<<<<<< HEAD
   
+=======
+  cursor: none;
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
   transition: background 0.2s, color 0.2s;
 }
 

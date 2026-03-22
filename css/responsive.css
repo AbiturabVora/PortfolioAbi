@@ -217,6 +217,7 @@
   #cur-ring {
     display: none !important;
   }
+<<<<<<< HEAD
 
   /* Tighten about text on touch devices */
   .about-text p {
@@ -236,4 +237,6 @@
     -webkit-text-stroke: 2.5px #ffffff;
     color: transparent !important;
   }
+=======
+>>>>>>> 53991f92b6b1512d0c3d6d0ffe6b2cc07c70e21b
 }
