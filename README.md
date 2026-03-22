@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Abiturab Vora - Portfolio
 
 A modern, interactive portfolio website showcasing my skills as a Java Full Stack Developer.
