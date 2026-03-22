@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ════════════════════════════════════
    CUSTOM CURSOR STYLES
    ════════════════════════════════════ */
@@ -32,38 +31,3 @@
   transition: width 0.2s, height 0.2s, border-color 0.2s, opacity 0.3s;
   opacity: 0;
 }
-=======
-/* ════════════════════════════════════
-   CUSTOM CURSOR STYLES
-   ════════════════════════════════════ */
-
-#cur {
-  width: 14px;
-  height: 14px;
-  background: var(--dark);
-  border-radius: 50%;
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, background 0.2s, opacity 0.3s;
-  opacity: 0;
-}
-
-#cur-ring {
-  width: 38px;
-  height: 38px;
-  border: 2.5px solid var(--dark);
-  border-radius: 50%;
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s, border-color 0.2s, opacity 0.3s;
-  opacity: 0;
-}
->>>>>>> 1432797 (Initial commit)
